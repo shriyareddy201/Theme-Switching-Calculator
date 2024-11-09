@@ -1,5 +1,3 @@
-                          // calculator methamatical part 
-
 // This line selects the element with the ID of "display" and assigns it to the variable "display"
 const display = document.querySelector("#display");
 // This line selects all elements with the tag "button" and assigns them to the variable "buttons"
