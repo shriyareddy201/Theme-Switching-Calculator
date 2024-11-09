@@ -1,11 +1,11 @@
-// This line selects the element with the ID of "display" and assigns it to the variable "display"
+
 const display = document.querySelector("#display");
-// This line selects all elements with the tag "button" and assigns them to the variable "buttons"
+
 const buttons = document.querySelectorAll("button");
 
-  // This block of code sets up an event listener for each button in the "buttons" node list
+  
   buttons.forEach((item) => {
-    // When a button is clicked, the anonymous function is executed
+   
     item.onclick = () => {
       // This block of code checks if the button clicked has the class "btn-operator" and the display does not contain a number
       // If both conditions are true, it displays a message on the display for one second before clearing it
