@@ -1,36 +1,23 @@
-
 const display = document.querySelector("#display");
-
 const buttons = document.querySelectorAll("button");
-
-  
   buttons.forEach((item) => {
    
     item.onclick = () => {
-      // This block of code checks if the button clicked has the class "btn-operator" and the display does not contain a number
-      // If both conditions are true, it displays a message on the display for one second before clearing it
       if (item.classList.contains("btn-operator") && !display.innerText.match(/\d/)) {
         display.innerText = "Enter a number first";
         setTimeout(() => (display.innerText = ""), 1000);
         return;
       }
-      // This block of code clears the display if the button clicked has the ID "clear"
       if (item.id == "clear") {
         display.innerText = "";
-      // This block of code removes the last character from the display if the button clicked has the ID "backspace"
       } else if (item.id == "backspace") {
         let string = display.innerText.toString();
         display.innerText = string.substr(0, string.length - 1);
-      // This block of code evaluates the expression in the display and displays the result if the button clicked has the ID "equal"
-      // and the display is not empty
       } else if (display.innerText != "" && item.id == "equal") {
         display.innerText = eval(display.innerText);
-      // This block of code displays a message on the display for two seconds if the button clicked has the ID "equal"
-      // and the display is empty
       } else if (display.innerText == "" && item.id == "equal") {
         display.innerText = "Empty!";
         setTimeout(() => (display.innerText = ""), 2000);
-      // This block of code adds the ID of the button clicked to the display for all other cases
       } else {
           display.innerText += item.id;
       }
@@ -39,11 +26,6 @@ const buttons = document.querySelectorAll("button");
 
 
 
-
-
-                        //calculator dark theme an light theme part
-
-// This line selects the element with the class "theme-toggler" and assigns it to the variable "themeToggleBtn"
 const themeToggleBtn = document.querySelector(".theme-toggler");
 // This line selects the element with the class "calculator" and assigns it to the variable "calculator"
 const calculator = document.querySelector(".calculator");
